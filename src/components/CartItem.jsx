@@ -1,11 +1,12 @@
 import React from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
 import { removeItem, increaseQty, decreaseQty } from '../features/cart/cartSlice';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 const CartItem = ({ id, img, title, price, amount }) => {
+
   const dispatch = useDispatch()
-  
+
   return (
     <div className="flex mt-5 h-[50px]">
       <div className="h-[50px] w-[50px]">
@@ -38,7 +39,7 @@ const CartItem = ({ id, img, title, price, amount }) => {
         </button>
       </div>
       <div className="mt-3 ml-5 w-[25%]">
-        <h4 className="font-medium">${price}</h4>
+        <h4 className="font-medium">${amount * parseFloat(price)}</h4>
       </div>
       <div className="ml-7 flex justify-center w-[5%]">
         <button

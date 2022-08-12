@@ -9,6 +9,7 @@ const Cart = ({ cartitems }) => {
   const { cartItems, amount, totalCost } = useSelector((store) => store.cart)
   const dispatch = useDispatch()
   
+  
   if (amount < 1) {
     return (
       <div className='flex justify-center items-center mt-40'>
